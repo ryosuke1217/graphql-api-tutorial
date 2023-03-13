@@ -9,7 +9,6 @@ const BOOKS = gql`
     }
   }
 `
-console.log(BOOKS)
 
 function Books() {
   const { loading, error, data } = useQuery(BOOKS)
@@ -17,7 +16,6 @@ function Books() {
   if (loading) return <p>ロード中・・・</p>
   if (error) return <p>エラー</p>
 
-  console.log(data)
   return data.test.map(({ title, author }) => (
     <div key={title}>
       <p>
